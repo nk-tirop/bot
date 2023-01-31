@@ -1,0 +1,51 @@
+version: "2.0"
+stories:
+- story: happy path 1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: action_no_internet
+- story: happy path 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great  # predicted: greet: amazing
+  - action: utter_happy  # predicted: action_no_internet
+  - intent: goodbye  # predicted: affirm: bye-bye!
+  - action: utter_goodbye  # predicted: action_no_internet
+- story: sad path 1 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: greet: not good
+  - action: utter_cheer_up  # predicted: action_no_internet
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: affirm
+  - action: utter_happy  # predicted: action_no_internet
+- story: sad path 2 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: greet: not good
+  - action: utter_cheer_up  # predicted: action_no_internet
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_show_time
+- story: sad path 3 (./tests/test_stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy  # predicted: no_internet: very terrible
+  - action: utter_cheer_up  # predicted: action_no_internet
+  - action: utter_did_that_help  # predicted: action_listen
+  - intent: deny
+  - action: utter_goodbye  # predicted: action_show_time
+- story: say goodbye (./tests/test_stories.yml)
+  steps:
+  - intent: goodbye  # predicted: affirm: bye-bye!
+  - action: utter_goodbye  # predicted: action_no_internet
+- story: bot challenge (./tests/test_stories.yml)
+  steps:
+  - intent: bot_challenge  # predicted: affirm: are you a bot?
+  - action: utter_iamabot  # predicted: action_no_internet

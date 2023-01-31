@@ -1,0 +1,58 @@
+version: "2.0"
+
+intents:
+  - greet
+  - affirm
+  - deny
+  - no_internet
+  - router_number
+  - give_time
+
+entities:
+  - router_number
+
+slots:
+  router_number:
+    type: text
+
+actions:
+  - action_no_internet
+  - action_show_time
+
+ 
+responses:
+  utter_greet:
+    - text: "Hello, how can i help you?"
+  utter_ask_router_number:
+    - text: "Please provide your router number."
+  utter_maintenance:
+    - text: "The router is under maintenance. Please wait while we resolve the issue."
+  utter_pay_subscription:
+    - text: "Please pay your subscription using the MPESA till provided."
+  utter_customer_care:
+    - text: "I'm sorry, I am not able to help you. Please contact customer care on the following number: 0000."
+  utter_check:
+    - text: "Please check if the router is connected to a valid power source and the light to show that it's on is on.Is it on?"
+  utter_connect:
+    - text: "Please connect to a valid power source and turn it on. See if it is working."
+  utter_notification:
+    - text: "Have you received a notification of repair?"
+  utter_repair:
+    - text: "The cables are under repair. Please be patient as we try to resolve the issue. Thank you for understanding."
+  utter_paid:
+    - text: "Have you paid for the subscription?"
+  utter_till:
+    - text: "Please pay for your internet using the following MPESA till: 568023"
+  utter_number:
+    - text: "Please provide your router number."
+  utter_correct:
+    - text: "you provided {router_number} as your router number. Is that correct?"
+  utter_wrong:
+    - text: "Please provide the correct router number."
+  utter_please_pay:
+    - text: "Please pay your subscription using the MPESA till provided."
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
