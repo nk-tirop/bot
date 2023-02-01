@@ -1,0 +1,103 @@
+version: "2.0"
+
+stories:
+
+- story: no_internet
+  steps:
+  - intent: no_internet
+  - action: action_no_internet
+  - intent: affirm
+  - action: action_check
+  - intent: deny
+  - action: action_payment
+  - intent: router_number
+  - action: action_router_check
+
+
+- story: interactive_story_1
+  steps:
+  - intent: no_internet
+  - action: action_no_internet
+  - action: utter_check
+  - intent: affirm
+  - action: utter_notification
+  - intent: deny
+  - action: utter_paid
+  - intent: affirm
+  - action: action_payment
+  - intent: router_number
+  - action: action_router_check
+  - action: utter_customer_care
+
+- story: interactive_story_1
+  steps:
+  - intent: no_internet
+  - action: action_no_internet
+  - action: utter_check
+  - intent: deny
+  - action: utter_connect
+
+- story: interactive_story_1
+  steps:
+  - intent: no_internet
+  - action: action_no_internet
+  - action: utter_check
+  - intent: affirm
+  - action: utter_notification
+  - intent: deny
+  - action: utter_paid
+  - intent: affirm
+  - action: action_payment
+  - intent: router_number
+    entities:
+    - router_number: '12345'
+  - slot_was_set:
+    - router_number: '12345'
+  - action: action_router_check
+  - action: utter_correct
+  - intent: affirm
+  - action: utter_customer_care
+
+- story: interactive_story_1
+  steps:
+  - intent: no_internet
+  - action: action_no_internet
+  - action: utter_check
+  - intent: affirm
+  - action: utter_notification
+  - intent: deny
+  - action: utter_paid
+  - intent: affirm
+  - action: action_payment
+  - intent: router_number
+    entities:
+    - router_number: '12345'
+  - slot_was_set:
+    - router_number: '12345'
+  - action: action_router_check
+  - action: utter_correct
+  - intent: affirm
+  - action: utter_maintenance
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: no_internet
+  - action: action_no_internet
+  - action: utter_check
+  - intent: affirm
+  - action: utter_notification
+  - intent: deny
+  - action: utter_paid
+  - intent: affirm
+  - action: action_payment
+  - intent: router_number
+    entities:
+    - router_number: '12345'
+  - slot_was_set:
+    - router_number: '12345'
+  - action: action_router_check
+  - action: utter_correct
+  - intent: affirm
+  - action: utter_customer_care

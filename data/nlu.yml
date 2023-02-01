@@ -1,0 +1,26 @@
+version: "2.0"
+nlu:
+- intent: no_internet
+  examples: |
+    - i have no internet
+    - no internnet
+- intent: affirm
+  examples: |
+    - yes it is
+    - yes
+    - it is
+    - y
+- intent: deny
+  examples: |
+    - no
+    - n
+    - i  didnt
+- intent: router_number
+  examples: |
+    - my router number is 12345
+    - [12345](router_number)
+    - it is [12345](router_number)
+    - its [12345](router_number)
+- intent: greet
+  examples: |
+    - hello

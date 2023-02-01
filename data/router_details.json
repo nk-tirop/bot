@@ -1,0 +1,40 @@
+{
+    "routers": [
+        {
+            "router_number": "12345",
+            "subscription_type": "slow",
+            "is_active": true,
+            "under_maintenance": false
+        },
+        {
+            "router_number": "67890",
+            "subscription_type": "medium",
+            "is_active": true,
+            "under_maintenance": false
+        },
+        {
+            "router_number": "23456",
+            "subscription_type": "fast",
+            "is_active": true,
+            "under_maintenance": true
+        },
+        {
+            "router_number": "34567",
+            "subscription_type": "veryfast",
+            "is_active": false,
+            "under_maintenance": true
+        },
+        {
+            "router_number": "45678",
+            "subscription_type": "fast",
+            "is_active": true,
+            "under_maintenance": false
+        },
+        {
+            "router_number": "56789",
+            "subscription_type": "medium",
+            "is_active": false,
+            "under_maintenance": true
+        }
+    ]
+}
